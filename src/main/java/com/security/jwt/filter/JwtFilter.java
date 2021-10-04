@@ -32,7 +32,7 @@ public class JwtFilter extends OncePerRequestFilter {
 		String authorizationHeader = request.getHeader("Authorization");
 		String token = null;
 		String userName = null;
-		//Custom filter
+		//Custom filter impl
 		
 		if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
 			token = authorizationHeader.substring(7);
