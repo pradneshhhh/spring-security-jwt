@@ -18,6 +18,10 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import com.security.jwt.service.UserDetailsServiceCustom;
 import com.security.jwt.utils.JwtUtil;
 
+/**
+ * @author pradn
+ *
+ */
 @Component
 public class JwtFilter extends OncePerRequestFilter {
 
@@ -26,9 +30,13 @@ public class JwtFilter extends OncePerRequestFilter {
 	@Autowired
 	private UserDetailsServiceCustom userDetailsService;
 
+	/**
+	 * 
+	 */
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
+		//custom filter method 
 		String authorizationHeader = request.getHeader("Authorization");
 		String token = null;
 		String userName = null;
